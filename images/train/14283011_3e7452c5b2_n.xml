@@ -1,0 +1,26 @@
+<annotation>
+	<folder>dandelion</folder>
+	<filename>14283011_3e7452c5b2_n.jpg</filename>
+	<path>H:\Tensorflow\custom_models\image_classifier\flower_photos\dandelion\14283011_3e7452c5b2_n.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>320</width>
+		<height>240</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>dandelion</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>104</xmin>
+			<ymin>67</ymin>
+			<xmax>193</xmax>
+			<ymax>190</ymax>
+		</bndbox>
+	</object>
+</annotation>

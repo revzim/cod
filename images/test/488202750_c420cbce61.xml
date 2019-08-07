@@ -1,0 +1,26 @@
+<annotation>
+	<folder>daisy</folder>
+	<filename>488202750_c420cbce61.jpg</filename>
+	<path>H:\Tensorflow\custom_models\image_classifier\flower_photos\daisy\488202750_c420cbce61.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>375</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>daisy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>51</xmin>
+			<ymin>9</ymin>
+			<xmax>458</xmax>
+			<ymax>369</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>roses</folder>
+	<filename>509239741_28e2cfe492_m.jpg</filename>
+	<path>H:\Tensorflow\custom_models\image_classifier\flower_photos\roses\509239741_28e2cfe492_m.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>179</width>
+		<height>240</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rose</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5</xmin>
+			<ymin>21</ymin>
+			<xmax>167</xmax>
+			<ymax>184</ymax>
+		</bndbox>
+	</object>
+</annotation>

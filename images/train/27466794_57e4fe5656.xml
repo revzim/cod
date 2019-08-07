@@ -1,0 +1,26 @@
+<annotation>
+	<folder>sunflowers</folder>
+	<filename>27466794_57e4fe5656.jpg</filename>
+	<path>H:\Tensorflow\custom_models\image_classifier\flower_photos\sunflowers\27466794_57e4fe5656.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>375</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sunflower</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>9</ymin>
+			<xmax>500</xmax>
+			<ymax>373</ymax>
+		</bndbox>
+	</object>
+</annotation>
