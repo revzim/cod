@@ -51,13 +51,13 @@
 
 ##
 
-** * This repository should be used for learning purposes. My custom-trained model that is provided within this repository has been trained for ~20000 steps. ** 
+*** This repository should be used for learning purposes. My custom-trained model that is provided within this repository has been trained for ~20000 steps.** 
 
-** * Note: The training process according to the config file (training/training.config) limits the training process to 200000 steps, which the authors at Tensorflow found to be "sufficient enough to train the... dataset." This amount of steps will effectively bypass the learning rate schedule, leading to a never-decaying learning rate. **
+*** Note: The training process according to the config file (training/training.config) limits the training process to 200000 steps, which the authors at Tensorflow found to be "sufficient enough to train the... dataset." This amount of steps will effectively bypass the learning rate schedule, leading to a never-decaying learning rate.**
 
-** * Any implementation or use of Tensorflow requires Tensorflow, along with other libraries and API's to be installed. Installation instructions for Tensorflow can be found [here](https://www.tensorflow.org/install). **
+*** Any implementation or use of Tensorflow requires Tensorflow, along with other libraries and API's to be installed. Installation instructions for Tensorflow can be found [here](https://www.tensorflow.org/install).**
 
-** * Certain files and directories within this repository were moved here for viewing purposes. Thus, linking and certain files might yield warnings/errors due to the nature of this repository and the nature of Tensorflow. **
+*** Certain files and directories within this repository were moved here for viewing purposes. Thus, linking and certain files might yield warnings/errors due to the nature of this repository and the nature of Tensorflow.**
 
 ##
 
