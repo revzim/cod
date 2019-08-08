@@ -34,6 +34,9 @@ from object_detection.utils import ops as utils_ops
 if StrictVersion(tf.__version__) < StrictVersion('1.9.0'):
   raise ImportError('Please upgrade your TensorFlow installation to v1.9.* or later!')
 
+# This is needed to display the images.
+# %matplotlib inline
+
 from utils import label_map_util
 
 from utils import visualization_utils as vis_util
@@ -68,7 +71,7 @@ def load_image_into_numpy_array(image):
       (im_height, im_width, 3)).astype(np.uint8)
 
 PATH_TO_TEST_IMAGES_DIR = 'H:/Tensorflow/custom_models/object_detection/custom_detection/testers'
-TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(5,6) ]
+TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(1, 5) ]
 
 # Size, in inches, of the output images.
 IMAGE_SIZE = (12, 8)
@@ -167,16 +170,31 @@ def draw_bounding_box_on_image(image,
               font=font)
     text_bottom -= text_height - 2 * margin
 
+# helper to get class names
+def get_class_name(i):
+  if i == 1:
+    return 'daisy'
+  elif i == 2:
+    return 'dandelion'
+  elif i == 3:
+    return 'rose'
+  elif i == 4:
+    return 'sunflower'
+  elif i == 5:
+    return 'tulip'
+  else:
+    return None
+    
+
 def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.2):
   """Overlay labeled boxes on an image with formatted scores and label names."""
   colors = list(ImageColor.colormap.values())
-
   font = ImageFont.load_default()
+  guess = None
   for i in range(min(boxes.shape[0], max_boxes)):
     if scores[i] >= min_score:
       ymin, xmin, ymax, xmax = tuple(boxes[i].tolist())
-      display_str = "{}: {}%".format(class_names[i],
-                                     int(100 * scores[i]))
+      display_str = "{}: {}%".format(get_class_name(class_names[i]), int(100 * scores[i]))
       color = colors[hash(class_names[i]) % len(colors)]
       image_pil = Image.fromarray(np.uint8(image)).convert("RGB")
       draw_bounding_box_on_image(
@@ -192,20 +210,21 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.2):
   return image
 
 i = 1
+# iter_val = 2
 last_iter = []
 for image_path in TEST_IMAGE_PATHS:
   image = resize_image(image_path)
+  # image = Image.open(image_path)
   # the array based representation of the image will be used later in order to prepare the
   # result image with boxes and labels on it.
   image_np = load_image_into_numpy_array(image)
   # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
   image_np_expanded = np.expand_dims(image_np, axis=0)
-  # detection
+  # Actual detection.
   output_dict = run_inference_for_single_image(image_np_expanded, detection_graph)
   # DRAW IMAGE WITH BOXES AND SAVE
   image_with_boxes = draw_boxes(
     image_np, output_dict["detection_boxes"],
     output_dict["detection_classes"], output_dict["detection_scores"])
-  save_image(image_with_boxes, "testers/output", i + FLAGS.iter_val)
+  save_image(image_with_boxes, "testers/output/20004", i + FLAGS.iter_val)
   i += 1
-
