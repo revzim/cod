@@ -12,7 +12,7 @@
 
 ##
 
-##### Environment: ` Windows 10 PC Home Edition | NVIDIA GeForce GTX 1060 6GB `
+##### Environment: ` Windows 10 PC Home Edition | FX-8320 OC TO 4.0 GHZ | NVIDIA GeForce GTX 1060 6GB `
 
 
 ##### Before attempting custom object detection, I checked out the tutorial for [Tensorflow Image Classification](https://www.tensorflow.org/hub/tutorials/image_retraining) and successfully tested certain classification for different images. I used the images provided within that tutorial for this project to classify certain species of flowers because why not. A simplified description of my process is outlined below.
