@@ -27,6 +27,18 @@ flags.DEFINE_integer(
     'iter_val', None, 'Test round '
     'Test round for output image value.')
 
+flags.DEFINE_string(
+    'step_dir', None, 'Step number '
+    'Step number checkpoint for saving output prediction images.')
+
+flags.DEFINE_integer(
+    'start_index', None, 'start index image num'
+    'Use numbered images labeled "imagex.jpg" x corresponding to index.')
+
+flags.DEFINE_integer(
+    'end_index', None, 'end index image num '
+    'Use numbered images labeled "imagex.jpg" x corresponding to index.')
+
 # object_detection folder
 sys.path.append("..")
 from object_detection.utils import ops as utils_ops
@@ -43,9 +55,9 @@ from utils import visualization_utils as vis_util
 
 FLAGS = flags.FLAGS
 
-MODEL_NAME = 'H:/Tensorflow/custom_models/object_detection/custom_detection/inference_graph'
+MODEL_NAME = 'C:/Users/zim/github/cod/inference_graph'
 PATH_TO_FROZEN_GRAPH = MODEL_NAME + '/frozen_inference_graph.pb'
-PATH_TO_LABELS = 'H:/Tensorflow/custom_models/object_detection/custom_detection/training/label_map.pbtxt'
+PATH_TO_LABELS = 'C:/Users/zim/github/cod/training/label_map.pbtxt'
 
 detection_graph = tf.Graph()
 with detection_graph.as_default():
@@ -70,8 +82,8 @@ def load_image_into_numpy_array(image):
   return np.array(image.getdata()).reshape(
       (im_height, im_width, 3)).astype(np.uint8)
 
-PATH_TO_TEST_IMAGES_DIR = 'H:/Tensorflow/custom_models/object_detection/custom_detection/testers'
-TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(1, 5) ]
+PATH_TO_TEST_IMAGES_DIR = 'C:/Users/zim/github/cod/testers'
+TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(FLAGS.start_index, FLAGS.end_index + 1) ]
 
 # Size, in inches, of the output images.
 IMAGE_SIZE = (12, 8)
@@ -125,7 +137,7 @@ def run_inference_for_single_image(image, graph):
 
 def save_image(img, head_dir, img_num):
   img = Image.fromarray(img)
-  img.save("H:/Tensorflow/custom_models/object_detection/custom_detection/{}/test{}.png".format(head_dir, img_num))
+  img.save("C:/Users/zim/github/cod/{}/test{}.png".format(head_dir, img_num))
 
 def draw_bounding_box_on_image(image,
                                ymin,
@@ -226,5 +238,5 @@ for image_path in TEST_IMAGE_PATHS:
   image_with_boxes = draw_boxes(
     image_np, output_dict["detection_boxes"],
     output_dict["detection_classes"], output_dict["detection_scores"])
-  save_image(image_with_boxes, "testers/output/20004", i + FLAGS.iter_val)
+  save_image(image_with_boxes, "testers/output/{}".format(FLAGS.step_dir), i + FLAGS.iter_val)
   i += 1

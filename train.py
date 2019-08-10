@@ -19,7 +19,7 @@
 # py train.py --logtostderr --train_dir=training/ --pcp=training/training.config --model_dir=training/model_1
 
 # RUN TO CREATE INFERENCE GRAPH
-# py .\export_inference_graph.py --input_type=image_tensor --pipeline_config_path=H:/Tensorflow/custom_models/object_detection/custom_detection/training/training.config --trained_checkpoint_prefix=H:/Tensorflow/custom_models/object_detection/custom_detection/training/model_1/model.ckpt-20004 --output_directory=H:/Tensorflow/custom_models/object_detection/custom_detection/inference_graph
+# py .\export_inference_graph.py --input_type=image_tensor --pipeline_config_path=C:/Users/zim/github/cod/training/training.config --trained_checkpoint_prefix=C:/Users/zim/github/cod/training/model_1/model.ckpt-49362 --output_directory=C:/Users/zim/github/cod/inference_graph
 
 
 from __future__ import absolute_import
