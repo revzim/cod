@@ -7,6 +7,7 @@
 ##
 
 ![Custom-Trained Model Learning Comparison](https://raw.githubusercontent.com/revzim/cod/master/comparison.png)
+![49K Steps](https://github.com/revzim/cod/blob/master/49k_steps_tb.png)
 
 ###### Andy Zimmelman 2019
 
